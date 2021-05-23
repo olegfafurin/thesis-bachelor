@@ -1,29 +1,68 @@
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics
+import ru.itmo.ctd.fafurin.spanner.*
 import java.io.File
-import java.lang.Integer.min
 import kotlin.math.abs
+import kotlin.math.pow
+import kotlin.random.Random
 
 /**
  * created by imd on 04.05.2021
  */
 
+val rand = Random(System.nanoTime())
+
 fun main() {
-//    testCycleManual(100, 4, 11)
-//    testChainManual(10, 3, 9)
-//    testFloyd(makeErdos(100, 10), 0, 1, "erdos with n=100, deg=10")
-//    testFloyd(makeErdos(100, 10), 0, 10, "erdos with n=100, deg=10")
-//    testFloyd(makeErdos(100, 10), 7, 84, "erdos with n=100, deg=10")
+//    testDistMethods(ru.itmo.ctd.fafurin.spanner.makeErdos(100,8))
+    testFacebook()
+}
+
+fun FRTTree.calcSum(): Long {
+    var acc = 0L
+
+    fun visit(v: FRTTree.Node): Long {
+        var leaves = 0L
+        if (v.level == depth)
+            return 1
+        for (child in v.children.values) {
+            val childLeaves = visit(child)
+            leaves += childLeaves
+            acc += childLeaves * (n - childLeaves) * 2.0.pow(depth - v.level).toInt()
+        }
+        return leaves
+    }
+
+    visit(root)
+    return acc
+}
+
+
+fun testFacebook() {
+    val n = 4039
+    val e = MutableList(n) { mutableListOf<Int>() }
+    for (line in File("data/facebook_combined.txt").readLines()) {
+        val edge = line.split(" ").map { it.toInt() }
+        e[edge[0]].add(edge[1])
+        e[edge[1]].add(edge[0])
+    }
+    val d = calcDistBFS(e)
+    for (i in 0 until 100) {
+        val u = rand.nextInt(n)
+        var v = rand.nextInt(n)
+        while (v == u)
+            v = rand.nextInt(n)
+        test(d, u, v, "facebook", 20)
+    }
 }
 
 fun testErdos() {
     for (size in 12..1000) {
-        val graph = calcDist(makeErdos(size, 10))
+        val graph = calcDistFloyd(makeErdosRenyiGraph(size, 10))
         testSum(graph, "erdos: n=$size")
     }
 }
 
 fun testFloyd(e: List<List<Int>>, lhsIndex: Int, rhsIndex: Int, graphDesc: String) {
-    val d = calcDist(e)
+    val d = calcDistFloyd(e)
     test(d, lhsIndex, rhsIndex, "Floyd on $graphDesc")
 }
 

@@ -1,0 +1,502 @@
+facebook
+________
+initial: d(171, 2685) = 2, diameter = 8
+avg: 25.6, std: 10.73312629199899, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(27, 774) = 6, diameter = 8
+avg: 36.0, std: 14.216373066218218, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(2287, 961) = 4, diameter = 8
+avg: 29.6, std: 11.490957543353726, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1589, 3624) = 4, diameter = 8
+avg: 34.4, std: 13.132522906689973, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(409, 2259) = 4, diameter = 8
+avg: 28.0, std: 8.991223791184261, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(4026, 2837) = 6, diameter = 8
+avg: 45.6, std: 16.333369137089296, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(1477, 1552) = 2, diameter = 8
+avg: 10.8, std: 5.366563145999496, min: 4.0, max: 28.0
+
+facebook
+________
+initial: d(3804, 3896) = 2, diameter = 8
+avg: 12.0, std: 0.0, min: 12.0, max: 12.0
+
+facebook
+________
+initial: d(2935, 682) = 4, diameter = 8
+avg: 24.0, std: 7.108186533109109, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(1850, 384) = 3, diameter = 8
+avg: 24.0, std: 7.108186533109109, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2609, 579) = 4, diameter = 8
+avg: 26.4, std: 13.635866019628644, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1447, 3948) = 3, diameter = 8
+avg: 32.0, std: 15.464730671332175, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3162, 2532) = 4, diameter = 8
+avg: 29.6, std: 7.15541752799933, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(2531, 894) = 6, diameter = 8
+avg: 42.4, std: 16.333369137089296, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(330, 1394) = 3, diameter = 8
+avg: 26.4, std: 10.251572408274995, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(161, 567) = 4, diameter = 8
+avg: 28.8, std: 8.166684568544648, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(2310, 3604) = 5, diameter = 8
+avg: 33.6, std: 14.001503678646731, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3735, 2695) = 5, diameter = 8
+avg: 34.4, std: 13.132522906689973, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(408, 823) = 5, diameter = 8
+avg: 34.4, std: 13.132522906689974, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(2148, 2406) = 2, diameter = 8
+avg: 15.2, std: 6.566261453344986, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(1313, 2618) = 3, diameter = 8
+avg: 31.2, std: 13.336140055463845, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(114, 3261) = 4, diameter = 8
+avg: 25.6, std: 5.861560776520372, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2539, 3421) = 4, diameter = 8
+avg: 29.6, std: 7.1554175279993295, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(2380, 1662) = 4, diameter = 8
+avg: 35.2, std: 15.112211862213323, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(251, 795) = 7, diameter = 8
+avg: 39.2, std: 15.659535517746974, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(595, 3101) = 4, diameter = 8
+avg: 27.2, std: 9.676885101268793, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3446, 3489) = 2, diameter = 8
+avg: 12.0, std: 0.0, min: 12.0, max: 12.0
+
+facebook
+________
+initial: d(1867, 3894) = 4, diameter = 8
+avg: 30.4, std: 10.73312629199899, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(2145, 1387) = 4, diameter = 8
+avg: 28.8, std: 8.166684568544648, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1952, 3231) = 4, diameter = 8
+avg: 31.2, std: 9.84939218001748, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(270, 3184) = 4, diameter = 8
+avg: 24.8, std: 11.133637983015351, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3881, 3200) = 5, diameter = 8
+avg: 34.4, std: 13.132522906689973, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(370, 3363) = 4, diameter = 8
+avg: 22.4, std: 7.829767758873487, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3693, 1269) = 4, diameter = 8
+avg: 32.8, std: 11.723121553040745, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(3011, 1909) = 3, diameter = 8
+avg: 22.4, std: 7.829767758873488, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(1451, 3693) = 4, diameter = 8
+avg: 32.8, std: 11.723121553040745, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(2033, 3399) = 4, diameter = 8
+avg: 27.2, std: 3.577708763999664, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(968, 1732) = 2, diameter = 8
+avg: 12.0, std: 0.0, min: 12.0, max: 12.0
+
+facebook
+________
+initial: d(420, 1172) = 2, diameter = 8
+avg: 16.0, std: 7.108186533109109, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(360, 2354) = 3, diameter = 8
+avg: 24.8, std: 14.310835055998655, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(951, 1548) = 2, diameter = 8
+avg: 12.8, std: 3.5777087639996634, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2069, 1751) = 4, diameter = 8
+avg: 26.4, std: 4.924696090008739, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3385, 2291) = 4, diameter = 8
+avg: 26.4, std: 4.924696090008739, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3305, 1074) = 3, diameter = 8
+avg: 28.0, std: 8.991223791184261, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(76, 903) = 3, diameter = 8
+avg: 24.0, std: 7.108186533109109, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2468, 2730) = 4, diameter = 8
+avg: 25.6, std: 5.861560776520372, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(1245, 3372) = 3, diameter = 8
+avg: 23.2, std: 11.723121553040745, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3452, 1052) = 4, diameter = 8
+avg: 36.0, std: 14.216373066218218, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(1136, 2066) = 3, diameter = 8
+avg: 26.4, std: 10.251572408274999, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(568, 1836) = 3, diameter = 8
+avg: 26.4, std: 4.924696090008739, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2849, 3975) = 5, diameter = 8
+avg: 34.4, std: 13.132522906689974, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(778, 2047) = 7, diameter = 8
+avg: 47.2, std: 16.08399007840111, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(942, 2479) = 4, diameter = 8
+avg: 31.2, std: 13.336140055463849, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3237, 529) = 4, diameter = 8
+avg: 30.4, std: 14.001503678646733, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1204, 3401) = 3, diameter = 8
+avg: 30.4, std: 16.639838055892127, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1870, 1657) = 2, diameter = 8
+avg: 12.4, std: 4.083342284272325, min: 4.0, max: 28.0
+
+facebook
+________
+initial: d(1622, 2917) = 3, diameter = 8
+avg: 21.6, std: 8.041995039200556, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3907, 1109) = 4, diameter = 8
+avg: 29.6, std: 11.490957543353726, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(297, 719) = 6, diameter = 8
+avg: 40.8, std: 16.08399007840111, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(3301, 3621) = 5, diameter = 8
+avg: 37.6, std: 15.045195071412069, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(1183, 2166) = 4, diameter = 8
+avg: 32.0, std: 12.582360250512787, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(428, 4032) = 3, diameter = 8
+avg: 36.0, std: 14.216373066218218, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(3116, 874) = 4, diameter = 8
+avg: 47.2, std: 16.08399007840111, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(3831, 206) = 5, diameter = 8
+avg: 32.0, std: 12.582360250512787, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1474, 1138) = 2, diameter = 8
+avg: 11.6, std: 1.788854381999832, min: 4.0, max: 12.0
+
+facebook
+________
+initial: d(1389, 442) = 3, diameter = 8
+avg: 24.8, std: 6.566261453344986, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(1365, 2094) = 4, diameter = 8
+avg: 28.0, std: 0.0, min: 28.0, max: 28.0
+
+facebook
+________
+initial: d(3658, 3718) = 2, diameter = 8
+avg: 12.0, std: 0.0, min: 12.0, max: 12.0
+
+facebook
+________
+initial: d(694, 2044) = 7, diameter = 8
+avg: 44.0, std: 16.415653633362464, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(3617, 1879) = 4, diameter = 8
+avg: 32.8, std: 11.723121553040745, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(3022, 908) = 3, diameter = 8
+avg: 24.8, std: 6.566261453344986, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3940, 571) = 4, diameter = 8
+avg: 27.2, std: 9.676885101268791, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(2252, 1151) = 4, diameter = 8
+avg: 27.2, std: 3.5777087639996643, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3828, 3080) = 5, diameter = 8
+avg: 32.0, std: 12.582360250512787, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(334, 936) = 3, diameter = 8
+avg: 24.8, std: 11.133637983015351, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3409, 1643) = 3, diameter = 8
+avg: 26.4, std: 10.251572408274999, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(904, 1588) = 2, diameter = 8
+avg: 14.0, std: 6.2911801252563935, min: 4.0, max: 28.0
+
+facebook
+________
+initial: d(2282, 3019) = 4, diameter = 8
+avg: 28.0, std: 8.991223791184261, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(2832, 2588) = 4, diameter = 8
+avg: 24.8, std: 6.566261453344987, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3742, 1680) = 4, diameter = 8
+avg: 34.4, std: 13.132522906689974, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(1423, 626) = 3, diameter = 8
+avg: 24.0, std: 7.108186533109109, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2237, 1406) = 4, diameter = 8
+avg: 27.2, std: 3.577708763999665, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2058, 133) = 4, diameter = 8
+avg: 27.2, std: 3.5777087639996634, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(329, 32) = 2, diameter = 8
+avg: 11.6, std: 1.7888543819998326, min: 4.0, max: 12.0
+
+facebook
+________
+initial: d(3308, 919) = 3, diameter = 8
+avg: 28.0, std: 15.573256428553202, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(345, 3141) = 4, diameter = 8
+avg: 28.8, std: 8.166684568544648, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3561, 1004) = 3, diameter = 8
+avg: 28.8, std: 12.14647447225997, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(302, 3689) = 5, diameter = 8
+avg: 39.2, std: 15.659535517746974, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(1268, 430) = 3, diameter = 8
+avg: 22.4, std: 11.922557125929515, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1755, 92) = 3, diameter = 8
+avg: 27.2, std: 13.209247159710344, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(3969, 3916) = 2, diameter = 8
+avg: 11.2, std: 2.46234804500437, min: 4.0, max: 12.0
+
+facebook
+________
+initial: d(1560, 1034) = 2, diameter = 8
+avg: 11.2, std: 2.46234804500437, min: 4.0, max: 12.0
+
+facebook
+________
+initial: d(984, 3399) = 3, diameter = 8
+avg: 28.0, std: 12.71551062782442, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(2749, 77) = 4, diameter = 8
+avg: 28.8, std: 12.146474472259973, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(1454, 538) = 2, diameter = 8
+avg: 13.6, std: 4.92469609000874, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(534, 3834) = 4, diameter = 8
+avg: 34.4, std: 13.132522906689973, min: 28.0, max: 60.0
+
+facebook
+________
+initial: d(1782, 2670) = 3, diameter = 8
+avg: 27.2, std: 9.676885101268791, min: 12.0, max: 60.0
+
+facebook
+________
+initial: d(2876, 2322) = 4, diameter = 8
+avg: 27.2, std: 3.577708763999664, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(3285, 1813) = 3, diameter = 8
+avg: 20.8, std: 8.166684568544648, min: 12.0, max: 28.0
+
+facebook
+________
+initial: d(2195, 2554) = 2, diameter = 8
+avg: 12.0, std: 0.0, min: 12.0, max: 12.0
+
+
+Process finished with exit code 0

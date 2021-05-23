@@ -1,3 +1,5 @@
+package ru.itmo.ctd.fafurin.spanner
+
 import java.lang.Integer.min
 import kotlin.math.ceil
 import kotlin.math.log2
@@ -11,21 +13,43 @@ import kotlin.random.Random
 class FRT(val n: Int, val d: List<List<Int>>) {
 
     val rand = Random(System.nanoTime())
+
+    /**
+     * Random value taken from the distribution with a density function p = 1/(x * ln 2)
+     */
     val beta: Double =
-        2.0.pow(rand.nextDouble()) // generate beta from the distribution with density function p = 1/(x * ln 2)
+        2.0.pow(rand.nextDouble())
+
+    /**
+     * Random permutation of vertices
+     */
     val pi = MutableList(n) { it }.apply {
         shuffle()
     }
 
-    //    val pi = mutableListOf(0,1,3,2)
     val piReversed = MutableList(n) { 0 }.apply {
         for (i in pi.indices)
             this[pi[i]] = i
     }
-    val diameter = d.maxOf { it.maxOf { it } } // requires a graph to be connected
+
+    /**
+     * Diameter of the graph.
+     * Requires the graph to be connected
+     */
+    val diameter = d.maxOf { it.maxOf { it } }
+
+    /**
+     * ru.itmo.ctd.fafurin.spanner.FRT decomposition tree depth
+     */
     val depth = ceil(log2(diameter.toDouble())).toInt() + 1
 
-    fun calcChain(center: Int): List<Int> {
+
+    /**
+     * Computes the cluster chain for a given vertex
+     *
+     * @param center vertex to process
+     */
+    fun makeChain(center: Int): List<Int> {
         val chain = mutableListOf<Int>()
         val distOrder =
             List(n) { d[center][it] }
@@ -45,11 +69,15 @@ class FRT(val n: Int, val d: List<List<Int>>) {
         return chain
     }
 
+
+    /**
+     * Computes the hierarchical decomposition tree
+     */
     fun calc(): FRTTree {
-        val tree = FRTTree(n, depth, beta, pi)
-        repeat(n) {
-            tree.addCenterSequence(it, calcChain(it))
+        return FRTTree(n, depth, beta, pi).apply {
+            repeat(n) {
+                addClusterCenterChain(it, makeChain(it))
+            }
         }
-        return tree
     }
 }

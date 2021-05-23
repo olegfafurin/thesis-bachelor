@@ -1,10 +1,20 @@
+package ru.itmo.ctd.fafurin.spanner
+
 import java.lang.Integer.min
+import java.util.*
 import kotlin.random.Random
 
 /**
  * created by imd on 04.05.2021
  */
 
+
+/**
+ * Performs a binary search for a value on a sorted non-decreasing list
+ *
+ * @param threshold threshold for a search
+ * @return index of a last element less than a threshold
+ */
 fun List<Int>.lowerBound(threshold: Double): Int {
     var l = 0
     var r = size - 1
@@ -23,11 +33,13 @@ fun List<Int>.lowerBound(threshold: Double): Int {
 }
 
 /**
+ * Produces a random graph in Erdos-Renyi model
+ *
  * @param n number of vertices
- * @param deg average degree
+ * @param deg average degree of a vertex
  * @return adjacency list
  */
-fun makeErdos(n: Int, deg: Int): List<List<Int>> {
+fun makeErdosRenyiGraph(n: Int, deg: Int): List<List<Int>> {
     val rand = Random(System.nanoTime())
     val p = deg.toDouble() / (n - 1)
     val e = MutableList(n) { mutableListOf<Int>() }
@@ -42,16 +54,12 @@ fun makeErdos(n: Int, deg: Int): List<List<Int>> {
     return e
 }
 
-//fun diskstra(v: Int, e: List<List<Int>>): List<Int> {
-//
-//}
-
 
 /**
  * @param e adjacency list
  * @return distances matrix
  */
-fun calcDist(e: List<List<Int>>): List<List<Int>> {
+fun calcDistFloyd(e: List<List<Int>>): List<List<Int>> {
     val n = e.size
     val dist =
         MutableList(n) { i -> MutableList(n) { j -> if (i == j) 0 else if (j in e[i]) 1 else Integer.MAX_VALUE / 2 } }
@@ -71,4 +79,38 @@ fun calcDist(e: List<List<Int>>): List<List<Int>> {
         }
     }
     return dist
+}
+
+
+/**
+ * @param e adjacency list
+ * @return distances matrix
+ */
+fun calcDistBFS(e: List<List<Int>>): List<List<Int>> {
+    val n = e.size
+    val dist = mutableListOf<List<Int>>()
+    repeat(n) {
+        dist.add(bfs(n, it, e))
+    }
+    return dist
+}
+
+fun bfs(n: Int, v: Int, e: List<List<Int>>): List<Int> {
+    val d = MutableList(n) { Integer.MAX_VALUE }
+    val used = MutableList(n) { false }
+    d[v] = 0
+    used[v] = true
+    val queue = ArrayDeque<Int>()
+    queue.add(v)
+    while (queue.isNotEmpty()) {
+        val u = queue.pop()
+        for (vertex in e[u]) {
+            if (!used[vertex]) {
+                used[vertex] = true
+                d[vertex] = d[u] + 1
+                queue.add(vertex)
+            }
+        }
+    }
+    return d
 }
