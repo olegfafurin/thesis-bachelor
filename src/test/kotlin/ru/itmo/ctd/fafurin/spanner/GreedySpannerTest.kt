@@ -13,21 +13,8 @@ class GreedySpannerTest {
     val n = 100
     val randomGraph = makeErdosRenyiGraph(n, n / 10)
     val d = calcDistBFS(randomGraph)
-    val spanner: GreedySpanner
-    val edges = mutableListOf<Pair<Int, Int>>()
-
-
-    init {
-        for (u in randomGraph.indices) {
-            for (v in randomGraph[u]) {
-                if (u < v) {
-                    edges.add(Pair(u, v))
-                }
-            }
-        }
-
-        spanner = GreedySpanner(n, edges.asSequence())
-    }
+    val edges = randomGraph.edgeList()
+    val spanner = GreedySpanner(randomGraph)
 
 
     @Test
@@ -46,15 +33,7 @@ class GreedySpannerTest {
         val n = 100
         val randomGraph = makeErdosRenyiGraph(n, n / 10)
         val d = calcDistBFS(randomGraph)
-        val edges = mutableListOf<Pair<Int, Int>>()
-        for (u in randomGraph.indices) {
-            for (v in randomGraph[u]) {
-                if (u < v) {
-                    edges.add(Pair(u, v))
-                }
-            }
-        }
-        val spanner = GreedySpanner(n, edges.asSequence())
+        val spanner = GreedySpanner(randomGraph)
         val stretch = 4
         val approxDist = calcDistBFS(spanner.compute(stretch))
         for (i in 0 until n) {

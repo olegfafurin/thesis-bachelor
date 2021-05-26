@@ -13,7 +13,19 @@ val rand = Random(System.nanoTime())
 
 fun main() {
 //    testDistMethods(ru.itmo.ctd.fafurin.spanner.makeErdos(100,8))
-    testFacebook()
+//    testFacebook()
+    for (d in listOf(1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5)) {
+        writeDegDistribution(10000, d)
+    }
+}
+
+fun writeDegDistribution(n: Int, d: Double) {
+    val scaleFreeGraph = getComponents(ScaleFreeGraphGenerator.makeGraph(5000, 1.2)).maxByOrNull {
+        it.n
+    }!!
+    val s = degrees(scaleFreeGraph).joinToString(separator = " ") { it.toString() }
+    File("res/degs-scale-free-$n-${d.toString().replace('.', '-')}.txt").writeText(s)
+
 }
 
 fun FRTTree.calcSum(): Long {
@@ -44,7 +56,7 @@ fun testFacebook() {
         e[edge[0]].add(edge[1])
         e[edge[1]].add(edge[0])
     }
-    val d = calcDistBFS(e)
+    val d = calcDistBFS(AdjListGraph(n, e))
     for (i in 0 until 100) {
         val u = rand.nextInt(n)
         var v = rand.nextInt(n)
@@ -61,10 +73,10 @@ fun testErdos() {
     }
 }
 
-fun testFloyd(e: List<List<Int>>, lhsIndex: Int, rhsIndex: Int, graphDesc: String) {
-    val d = calcDistFloyd(e)
-    test(d, lhsIndex, rhsIndex, "Floyd on $graphDesc")
-}
+//fun testFloyd(e: List<List<Int>>, lhsIndex: Int, rhsIndex: Int, graphDesc: String) {
+//    val d = calcDistFloyd(e)
+//    test(d, lhsIndex, rhsIndex, "Floyd on $graphDesc")
+//}
 
 fun testCycleManual(n: Int, lhsIndex: Int, rhsIndex: Int) {
     val d = MutableList(n) { i -> MutableList(n) { j -> abs(j - i) % n } }

@@ -23,7 +23,7 @@ class DistanceTest {
             listOf(1, 3),
             listOf(1, 2)
         )
-        val d: List<List<Int>> = calcDistBFS(adj)
+        val d: List<List<Int>> = calcDistBFS(AdjListGraph(7, adj))
         val expectedDist = listOf(
             listOf(0, 1, 3, 1, 1, 2, 2),
             listOf(1, 0, 2, 2, 2, 1, 1),
@@ -45,7 +45,7 @@ class DistanceTest {
             listOf(0, 4),
             listOf(3)
         )
-        val d: List<List<Int>> = calcDistFloyd(adj)
+        val d: List<List<Int>> = calcDistFloyd(AdjListGraph(5, adj))
         val expectedDist = listOf(
             listOf(0, 1, 1, 1, 2),
             listOf(1, 0, 2, 2, 3),

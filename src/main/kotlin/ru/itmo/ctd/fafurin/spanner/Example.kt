@@ -19,19 +19,11 @@ fun erdosRenyiExample(n: Int) {
             println("d'(i,j) = ${approxDistTree.dist(i, j)}")
         }
     }
-
 }
 
-fun algo(n: Int, e: List<List<Int>>): FRTTree {
-    val edges = mutableListOf<Pair<Int, Int>>()
-    for (u in e.indices) {
-        for (v in e[u]) {
-            if (u < v) edges.add(Pair(u, v))
-        }
-    }
-    edges.shuffle()
+fun algo(n: Int, g:Graph): FRTTree {
     val stretch = max(2,(log2(n.toDouble())/ log2(log2(n.toDouble()))).toInt())
-    val greedySpanner = GreedySpanner(n, edges.asSequence()).compute(stretch)
+    val greedySpanner = GreedySpanner(g).compute(stretch)
     val spannerDist = calcDistBFS(greedySpanner)
     return FRT(n, spannerDist).calc()
 }

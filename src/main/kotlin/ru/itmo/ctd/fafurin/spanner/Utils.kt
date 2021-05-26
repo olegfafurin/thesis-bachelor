@@ -39,31 +39,32 @@ fun List<Int>.lowerBound(threshold: Double): Int {
  * @param deg average degree of a vertex
  * @return adjacency list
  */
-fun makeErdosRenyiGraph(n: Int, deg: Int): List<List<Int>> {
+fun makeErdosRenyiGraph(n: Int, deg: Int): Graph {
     val rand = Random(System.nanoTime())
     val p = deg.toDouble() / (n - 1)
-    val e = MutableList(n) { mutableListOf<Int>() }
+    val adj = MutableList(n) { mutableListOf<Int>() }
     for (i in 0 until n) {
         for (j in i + 1 until n) {
             if (rand.nextDouble() < p) {
-                e[i].add(j)
-                e[j].add(i)
+                adj[i].add(j)
+                adj[j].add(i)
             }
         }
     }
-    return e
+    return AdjListGraph(n, adj)
 }
 
 
 /**
- * @param e adjacency list
+ * @param graph adjacency list
  * @return distances matrix
  */
-fun calcDistFloyd(e: List<List<Int>>): List<List<Int>> {
-    val n = e.size
+fun calcDistFloyd(graph: Graph): List<List<Int>> {
+    val n = graph.n
+    val neighbours = graph.adjList()
     val dist =
-        MutableList(n) { i -> MutableList(n) { j -> if (i == j) 0 else if (j in e[i]) 1 else Integer.MAX_VALUE / 2 } }
-    val m = e.sumOf { it.size } / 2
+        MutableList(n) { i -> MutableList(n) { j -> if (i == j) 0 else if (j in neighbours[i]) 1 else Integer.MAX_VALUE / 2 } }
+    val m = neighbours.sumOf { it.size } / 2
     for (k in 0 until n) {
         for (i in 0 until n) {
             for (j in 0 until n) {
@@ -83,28 +84,32 @@ fun calcDistFloyd(e: List<List<Int>>): List<List<Int>> {
 
 
 /**
- * @param e adjacency list
+ * @param graph adjacency list
  * @return distances matrix
  */
-fun calcDistBFS(e: List<List<Int>>): List<List<Int>> {
-    val n = e.size
+fun calcDistBFS(graph: Graph): List<List<Int>> {
     val dist = mutableListOf<List<Int>>()
-    repeat(n) {
-        dist.add(bfs(n, it, e))
+    repeat(graph.n) {
+        dist.add(bfs(it, graph))
     }
     return dist
 }
 
-fun bfs(n: Int, v: Int, e: List<List<Int>>): List<Int> {
-    val d = MutableList(n) { Integer.MAX_VALUE }
-    val used = MutableList(n) { false }
+
+/**
+ * @return distances list
+ */
+fun bfs(v: Int, graph: Graph): List<Int> {
+    val neighbours = graph.adjList()
+    val d = MutableList(graph.n) { Integer.MAX_VALUE }
+    val used = MutableList(graph.n) { false }
     d[v] = 0
     used[v] = true
     val queue = ArrayDeque<Int>()
     queue.add(v)
     while (queue.isNotEmpty()) {
         val u = queue.pop()
-        for (vertex in e[u]) {
+        for (vertex in neighbours[u]) {
             if (!used[vertex]) {
                 used[vertex] = true
                 d[vertex] = d[u] + 1
@@ -113,4 +118,54 @@ fun bfs(n: Int, v: Int, e: List<List<Int>>): List<Int> {
         }
     }
     return d
+}
+
+
+fun degrees(graph: Graph): List<Int> = graph.adjList().map { it.size }
+
+
+fun getComponents(graph: Graph): List<Graph> {
+
+    val corr = MutableList(graph.n) { -1 }
+    val component = MutableList(graph.n) { -1 }
+    var currentComponent = 0
+    var enumCounter = 0
+
+    fun dfs(g: Graph, u: Int) {
+        corr[u] = enumCounter++
+        component[u] = currentComponent
+        for (v in g.adjList()[u]) {
+            if (component[v] == -1)
+                dfs(g, v)
+        }
+    }
+
+    for (i in 0 until graph.n) {
+        if (component[i] == -1) {
+            dfs(graph, i)
+            currentComponent++
+            enumCounter = 0
+        }
+    }
+
+    val componentCount = MutableList(currentComponent) { 0 }
+    for (i in 0 until graph.n) {
+        componentCount[component[i]]++
+    }
+    val components = MutableList(currentComponent) {
+        MutableList(componentCount[it]) {
+            mutableListOf<Int>()
+        }
+    }
+    val adjList = graph.adjList()
+    for (u in 0 until graph.n) {
+        val comp = component[u]
+        for (v in adjList[u]) {
+            components[comp][corr[u]].add(corr[v])
+        }
+    }
+
+    return components.mapIndexed { i, comp ->
+        AdjListGraph(componentCount[i], comp)
+    }
 }

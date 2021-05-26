@@ -22,6 +22,9 @@ def main():
     draw(fig, "res/avg_greedy_erdos-renyi_1000_100.csv", "erdos-renyi<br>n=1000, deg=100")
     draw(fig, "res/avg_greedy_erdos-renyi_1000_20.csv", "erdos-renyi<br>n=1000, deg=20")
     draw(fig, "res/avg_greedy_erdos-renyi_10000_30.csv", "erdos-renyi<br>n=10000, deg=30")
+    draw(fig, "res/avg_greedy_scale-free_5000_1p2.csv", "scale-free<br>n~4K, base=1.2")
+    draw(fig, "res/avg_greedy_scale-free_10000_1p1.csv", "scale-free<br>n~4K, base=1.1")
+    draw(fig, "res/avg_greedy_scale-free_10000_1p2.csv", "scale-free<br>n~8K, base=1.2")
     fig.update_layout(
         title={
             'text': f"Удаление коротких циклов: искажение путей",

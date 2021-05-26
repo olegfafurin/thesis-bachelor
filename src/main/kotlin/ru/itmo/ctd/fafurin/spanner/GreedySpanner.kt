@@ -8,23 +8,22 @@ package ru.itmo.ctd.fafurin.spanner
 /**
  * Constructs a greedy spanner of a graph using a short cycles removal technique
  */
-class GreedySpanner(val n: Int, val edges: Sequence<Pair<Int, Int>>) {
+class GreedySpanner(val graph: Graph) {
 
     /**
      * @param stretch upper bound on an edge stretch
      * @return adjacency list of a spanner graph
      */
-    fun compute(stretch: Int): List<List<Int>> {
-        val insertedEdges = MutableList(n) { mutableListOf<Int>() }
-        for (edgeToInsert in edges) {
+    fun compute(stretch: Int): Graph {
+        val currentGraph = EdgeSetGraph(graph.n)
+        for (edgeToInsert in graph.edgeList()) {
             val u = edgeToInsert.first
             val v = edgeToInsert.second
-            val pathLength = bfs(n, u, insertedEdges)[v]
+            val pathLength = bfs(u, currentGraph)[v]
             if (pathLength > stretch) {
-                insertedEdges[u].add(v)
-                insertedEdges[v].add(u)
+                currentGraph.addEdge(Pair(u, v))
             }
         }
-        return insertedEdges
+        return currentGraph
     }
 }
