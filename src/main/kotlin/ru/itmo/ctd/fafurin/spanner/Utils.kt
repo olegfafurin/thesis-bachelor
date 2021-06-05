@@ -121,13 +121,13 @@ fun bfs(v: Int, graph: Graph): List<Int> {
 }
 
 
-fun degrees(graph: Graph): List<Int> = graph.adjList().map { it.size }
+fun Graph.degrees(): List<Int> = adjList().map { it.size }
 
 
-fun getComponents(graph: Graph): List<Graph> {
+fun Graph.getComponents(): List<Graph> {
 
-    val corr = MutableList(graph.n) { -1 }
-    val component = MutableList(graph.n) { -1 }
+    val corr = MutableList(n) { -1 }
+    val component = MutableList(n) { -1 }
     var currentComponent = 0
     var enumCounter = 0
 
@@ -140,16 +140,16 @@ fun getComponents(graph: Graph): List<Graph> {
         }
     }
 
-    for (i in 0 until graph.n) {
+    for (i in 0 until n) {
         if (component[i] == -1) {
-            dfs(graph, i)
+            dfs(this, i)
             currentComponent++
             enumCounter = 0
         }
     }
 
     val componentCount = MutableList(currentComponent) { 0 }
-    for (i in 0 until graph.n) {
+    for (i in 0 until n) {
         componentCount[component[i]]++
     }
     val components = MutableList(currentComponent) {
@@ -157,8 +157,8 @@ fun getComponents(graph: Graph): List<Graph> {
             mutableListOf<Int>()
         }
     }
-    val adjList = graph.adjList()
-    for (u in 0 until graph.n) {
+    val adjList = adjList()
+    for (u in 0 until n) {
         val comp = component[u]
         for (v in adjList[u]) {
             components[comp][corr[u]].add(corr[v])

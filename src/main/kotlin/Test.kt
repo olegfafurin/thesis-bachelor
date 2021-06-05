@@ -20,10 +20,10 @@ fun main() {
 }
 
 fun writeDegDistribution(n: Int, d: Double) {
-    val scaleFreeGraph = getComponents(ScaleFreeGraphGenerator.makeGraph(5000, 1.2)).maxByOrNull {
+    val scaleFreeGraph = ScaleFreeGraphGenerator.makeGraph(5000, 1.2).getComponents().maxByOrNull {
         it.n
     }!!
-    val s = degrees(scaleFreeGraph).joinToString(separator = " ") { it.toString() }
+    val s = scaleFreeGraph.degrees().joinToString(separator = " ") { it.toString() }
     File("res/degs-scale-free-$n-${d.toString().replace('.', '-')}.txt").writeText(s)
 
 }

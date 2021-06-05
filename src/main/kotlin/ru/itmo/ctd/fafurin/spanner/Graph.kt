@@ -14,4 +14,5 @@ interface Graph {
 
     fun adjMatrix(): List<List<Int>>
 
+
 }

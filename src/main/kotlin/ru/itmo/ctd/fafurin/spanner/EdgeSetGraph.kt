@@ -1,5 +1,8 @@
 package ru.itmo.ctd.fafurin.spanner
 
+import java.lang.Integer.max
+import java.lang.Integer.min
+
 /**
  * created by imd on 26.05.2021
  */
@@ -10,8 +13,7 @@ class EdgeSetGraph(override val n: Int) : Graph {
 
     constructor(n: Int, edgeSet: Set<Pair<Int, Int>>) : this(n) {
         for ((u, v) in edgeSet) {
-            if ((Pair(u, v) !in edgeSet) && (Pair(v, u) !in edgeSet))
-                this.edgeSet.add(Pair(u, v))
+            this.edgeSet.add(Pair(min(u, v), max(u, v)))
         }
     }
 

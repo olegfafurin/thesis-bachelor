@@ -17,8 +17,7 @@ object ScaleFreeGraphGenerator {
      * Generates n samples from the exponential distribution
      */
     fun randPowerLaw(n: Int, d: Double): List<Double> = MutableList(n) {
-        val r = ((-log(1.0 - rand.nextDouble(), d)) % n)
-        return@MutableList r
+        (-log(1.0 - rand.nextDouble(), d)) % n
     }
 
     /**

@@ -39,7 +39,7 @@ class FRT(val n: Int, val d: List<List<Int>>) {
     val diameter = d.maxOf { it.maxOf { it } }
 
     /**
-     * ru.itmo.ctd.fafurin.spanner.FRT decomposition tree depth
+     * FRT decomposition tree depth
      */
     val depth = ceil(log2(diameter.toDouble())).toInt() + 1
 
